@@ -64,7 +64,7 @@ const Main = () => {
         <Card.Body>
           <Card.Title>{chef.name}</Card.Title>
           <Card.Text>
-            <p>Years of Experience {chef.years_of_experience}</p>
+            <p>Years of <strong>Experience</strong> {chef.years_of_experience}</p>
           </Card.Text>
         </Card.Body>
         <ListGroup className="list-group-flush">
