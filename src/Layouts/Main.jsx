@@ -73,7 +73,7 @@ const Main = () => {
           
         </ListGroup>
         <Card.Body>
-          <Button className=''>View Details</Button>
+          <Button className=''>View Recipes</Button>
         </Card.Body>
       </Card>
         </div>
