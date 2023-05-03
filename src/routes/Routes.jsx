@@ -3,6 +3,7 @@ import Main from "../Layouts/Main";
 import Home from "../pages/Home/Home";
 import ChefLayout from "../Layouts/ChefLayout";
 import Chefs from "../pages/Chefs";
+import Blog from "../pages/Blog";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,12 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
+     
     ],
+  },
+  {
+    path:'blog',
+    element:<Blog></Blog>
   },
   {
     path: "chef/:_id",

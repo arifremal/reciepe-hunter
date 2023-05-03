@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
-import { Form } from "react-router-dom";
+import { Form, Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -15,8 +15,9 @@ const Header = () => {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Blog</Nav.Link>
+              <Link to={"/"}>Home</Link>
+              <Link to={"/blog"}>Blog</Link>
+              
          
             </Nav>
             
