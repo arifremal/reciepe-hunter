@@ -6,6 +6,7 @@ const ChefLayout = () => {
     return (
         <div>
             <Header></Header>
+            coming
             <Footer></Footer>
         </div>
     );

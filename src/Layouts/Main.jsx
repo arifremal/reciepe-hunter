@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../Shared/Header';
 import Footer from '../pages/Home/Footer';
 import { Button, Card, Carousel, ListGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const Main = () => {
     const [chef,setChefs] = useState([])
@@ -73,7 +74,7 @@ const Main = () => {
           
         </ListGroup>
         <Card.Body>
-          <Button className=''>View Recipes</Button>
+          <Link to={`chef/${chef.id}`} ><Button >View Recipes</Button></Link>
         </Card.Body>
       </Card>
         </div>
