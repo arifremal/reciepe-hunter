@@ -8,7 +8,7 @@ import Footer from './Footer';
 const Home = () => {
     const [chef,setChefs] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/chefs')
+        fetch('https://next-chef-server-arifremal.vercel.app/chefs')
         .then(res=> res.json())
         .then(data => setChefs(data) )
     },[])
@@ -22,7 +22,7 @@ const Home = () => {
       <Carousel.Item interval={1000}>
         <img
           className="d-block w-100"
-          src="../../public/sebastian-coman-photography-cQbOSRpElxw-unsplash.jpg"
+          src="https://i.ibb.co/nnMpv3T/johnathan-macedo-4-NQEvx-W2-4w-unsplash.jpg"
           alt="First slide"
         />
         <Carousel.Caption>
@@ -33,7 +33,7 @@ const Home = () => {
       <Carousel.Item interval={500}>
         <img
           className="d-block w-100"
-          src="../../public/johnathan-macedo-4NQEvxW2_4w-unsplash.jpg"
+          src="https://i.ibb.co/S7RNfys/pylyp-sukhenko-y-XZf-TNRms-unsplash.jpg"
           alt="Second slide"
         />
         <Carousel.Caption>
@@ -44,7 +44,7 @@ const Home = () => {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="../../public/pylyp-sukhenko-y-XZf_TNRms-unsplash.jpg"
+          src="https://i.ibb.co/5xh1ZJr/sebastian-coman-photography-c-Qb-OSRp-Elxw-unsplash.jpg"
           alt="Third slide"
         />
         <Carousel.Caption>

@@ -7,11 +7,13 @@ import Blog from "../pages/Blog";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ProtectedRoute from "./ProtectedRoute";
+import Errorpage from "../ErrorPage/Errorpage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <Errorpage></Errorpage>,
 
     children: [
       {
@@ -37,7 +39,7 @@ const router = createBrowserRouter([
     path: "chef/:_id",
     element: <ProtectedRoute><ChefLayout></ChefLayout></ProtectedRoute>,
     loader: ({ params }) =>
-    fetch(`http://localhost:5000/chef/${params._id}`),
+    fetch(`https://next-chef-server-arifremal.vercel.app/chef/${params._id}`),
     children: [
       {
         path: ":_id",
