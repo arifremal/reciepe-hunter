@@ -4,6 +4,8 @@ import Home from "../pages/Home/Home";
 import ChefLayout from "../Layouts/ChefLayout";
 import Chefs from "../pages/Chefs";
 import Blog from "../pages/Blog";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
   {
     path:'blog',
     element:<Blog></Blog>
+  },
+  {
+    path:'/login',
+    element:<Login></Login>
+  },
+  {
+    path:'/registration',
+    element:<Register></Register>
   },
   {
     path: "chef/:_id",

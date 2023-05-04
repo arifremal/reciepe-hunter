@@ -12,7 +12,7 @@ const ChefLayout = () => {
   return (
     <div>
       <Header></Header>
-      coming
+     
       <div
         className="text-center d-flex justify-content-center align-items-center
 "
