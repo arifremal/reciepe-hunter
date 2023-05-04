@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../Shared/Header";
 import Footer from "./Home/Footer";
-import { Accordion } from "react-bootstrap";
+import { Accordion, Button } from "react-bootstrap";
 
 const Blog = () => {
   return (
@@ -37,7 +37,9 @@ To validate React props using PropTypes, import the PropTypes library from the '
         </Accordion.Body>
       </Accordion.Item>
     </Accordion>
+   <Button className="bg-info border-0 p-2 m-2  ">Download as PDF</Button>
    </div>
+
 
       <Footer></Footer>
     </div>
