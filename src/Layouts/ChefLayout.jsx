@@ -1,13 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../Shared/Header";
 import Footer from "../pages/Home/Footer";
 import { useLoaderData } from "react-router-dom";
 import { FaRegBookmark } from "react-icons/fa";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-import { Button, Card, CardGroup, ListGroup } from "react-bootstrap";
+import { Button, Card, CardGroup, ListGroup, Toast } from "react-bootstrap";
 
 const ChefLayout = () => {
+
   const chef = useLoaderData();
+const [clicked,setClicked] =useState(false)
+const handleClicked =()=>{
+  toast("Bookmark Added!")
+
+  setClicked(true)
+}
+const handleClicked1 =()=>{
+  toast("Bookmark Added!")
+
+  setClicked(true)
+}
+const handleClicked2 =()=>{
+  toast("Bookmark Added!")
+
+  setClicked(true)
+}
 
   return (
     <div>
@@ -86,7 +105,9 @@ const ChefLayout = () => {
                   <strong>Rating:{chef.chefs_info.recipes[0].rating}</strong>
                 </div>
                 <div>
-                  <FaRegBookmark></FaRegBookmark>
+                <button className="primary" onClick={handleClicked1} disabled={clicked}>
+                  {clicked ? 'Bookmarked' : 'Add to Favorites'}
+                  </button>
                 </div>
               </div>
             </Card.Footer>
@@ -125,7 +146,9 @@ const ChefLayout = () => {
                   <strong>Rating:{chef.chefs_info.recipes[1].rating}</strong>
                 </div>
                 <div>
-                  <FaRegBookmark></FaRegBookmark>
+                <button className="text-primary" onClick={handleClicked2} disabled={clicked}>
+                  {clicked ? 'Bookmarked' : 'Add to Favorites'}
+                  </button>
                 </div>
               </div>
             </Card.Footer>
@@ -164,13 +187,16 @@ const ChefLayout = () => {
                   <strong>Rating:{chef.chefs_info.recipes[2].rating}</strong>
                 </div>
                 <div>
-                  <FaRegBookmark></FaRegBookmark>
+                  <button className="text-primary" onClick={handleClicked} disabled={clicked}>
+                  {clicked ? 'Bookmarked' : 'Add to Favorites'}
+                  </button>
                 </div>
               </div>
             </Card.Footer>
           </Card>
         
         </CardGroup>
+        <ToastContainer></ToastContainer>
       </div>
       <Footer></Footer>
     </div>
