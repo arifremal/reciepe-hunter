@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Header from "../Shared/Header";
 import Footer from "./Home/Footer";
 import { Button, Container, Form, ListGroup } from "react-bootstrap";
@@ -13,6 +13,7 @@ const Login = () => {
   const from = location.state?.from?.pathname || "/";
 
   const navigate = useNavigate();
+  const [error,setError] = useState('')
   const handGoogle = () => {
     googleSignIn()
       .then((result) => {
@@ -51,9 +52,12 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         navigate(from, { replace: true });
+        setError('')
+        form.reset()
       })
       .catch((error) => {
         console.log(error);
+        setError(error.message)
       });
   };
   return (
@@ -88,7 +92,9 @@ const Login = () => {
           <Form.Text className="">
             Don't Have an Account ?<Link to={"/registration"}>Register</Link>
           </Form.Text>
-          <Form.Text className="text-danger"></Form.Text>
+          <Form.Text className="text-danger">
+          <p className="text-danger" > {error}</p>
+          </Form.Text>
           <Form.Text className="text-success"></Form.Text>
         </Form>
         <Button className="mb-2" onClick={handGoogle} variant="outline-primary">
@@ -98,6 +104,7 @@ const Login = () => {
         <Button onClick={handleGithub} variant="outline-secondary">
           {" "}
           <FaGithub></FaGithub> Login with Github
+        
         </Button>
       </Container>
       <Footer></Footer>
