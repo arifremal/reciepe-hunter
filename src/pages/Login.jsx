@@ -8,7 +8,7 @@ import { FaGoogle, FaGithub } from "react-icons/fa";
 import { signInWithPopup } from "firebase/auth";
 
 const Login = () => {
-  const { signIn, googleSignIn } = useContext(AuthContext);
+  const { signIn, googleSignIn,gitHubSignIn } = useContext(AuthContext);
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
@@ -16,14 +16,27 @@ const Login = () => {
   const handGoogle = () => {
     googleSignIn()
       .then((result) => {
-        const loggedUser = result.user;
-        console.log(loggedUser);
+        const goggleUser = result.user;
+        // console.log(loggedUser);
         navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
       });
   };
+
+  const handleGithub =()=>{
+    gitHubSignIn()
+    .then((result) => {
+      const gitHubUser = result.user;
+      // console.log(loggedUser);
+      navigate(from, { replace: true });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+
+  }
 
   const handleLogIn = (event) => {
     event.preventDefault();
@@ -82,7 +95,7 @@ const Login = () => {
           {" "}
           <FaGoogle /> Login with Google
         </Button>
-        <Button variant="outline-secondary">
+        <Button onClick={handleGithub} variant="outline-secondary">
           {" "}
           <FaGithub></FaGithub> Login with Github
         </Button>
