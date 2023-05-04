@@ -32,8 +32,8 @@ const Header = () => {
                 to="/"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-danger text-decoration-none ps-2"
-                    : "text-decoration-none ps-2"
+                    ? "text-info fs-5 text-decoration-none ps-2"
+                    : "text-decoration-none fs-5 ps-2"
                 }
               >
                 Home
@@ -43,8 +43,8 @@ const Header = () => {
                 to="/blog"
                 className={({ isActive }) =>
                   isActive
-                    ? "text-danger text-decoration-none ps-2"
-                    : "text-decoration-none ps-2"
+                    ? "text-info text-decoration-none fs-5 ps-2"
+                    : "text-decoration-none ps-2 fs-5"
                 }
               >
                 Blog
@@ -64,12 +64,12 @@ const Header = () => {
               )}
             </Nav>
             {user ? (
-              <Button onClick={handleLogOut} variant="outline-primary">
+              <Button onClick={handleLogOut} variant="outline-info fs-6">
                 Logout
               </Button>
             ) : (
               <Link to="/login">
-                <Button variant="outline-primary">Login</Button>
+                <Button variant="outline-info fs-6">Login</Button>
               </Link>
             )}
             {/* <Link to="registration">

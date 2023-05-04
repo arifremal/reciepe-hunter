@@ -3,39 +3,41 @@ import Header from "../Shared/Header";
 import Footer from "../pages/Home/Footer";
 import { useLoaderData } from "react-router-dom";
 import { FaRegBookmark } from "react-icons/fa";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { Button, Card, CardGroup, ListGroup, Toast } from "react-bootstrap";
 
 const ChefLayout = () => {
-
   const chef = useLoaderData();
-const [clicked,setClicked] =useState(false)
-const handleClicked =()=>{
-  toast("Bookmark Added!")
+  const [clicked, setClicked] = useState(false);
+  const [clicked1, setClicked1] = useState(false);
+  const [clicked2, setClicked2] = useState(false);
+  const handleClicked = () => {
+    toast("Bookmark Added!");
 
-  setClicked(true)
-}
-const handleClicked1 =()=>{
-  toast("Bookmark Added!")
+    setClicked(true);
+  };
+  const handleClicked1 = () => {
+    toast("Bookmark Added!");
 
-  setClicked(true)
-}
-const handleClicked2 =()=>{
-  toast("Bookmark Added!")
+    setClicked1(true);
+  };
+  const handleClicked2 = () => {
+    toast("Bookmark Added!");
 
-  setClicked(true)
-}
+    setClicked2(true);
+  };
 
   return (
     <div>
       <Header></Header>
-     
+      <h1 className="text-center py-4">Our CHEF'S<strong className="text-bg-info mt-3 ms-1 rounded text-white ">INFORMATION</strong></h1>
       <div
-        className="text-center d-flex justify-content-center align-items-center
+        className="text-center d-flex justify-content-center align-items-center p-4
 "
       >
+
         <Card className="bg-dark text-white border border-white  w-50">
           <Card.Img
             className=""
@@ -93,20 +95,25 @@ const handleClicked2 =()=>{
                   {chef.chefs_info.recipes[0].ingredients[4]}
                 </ListGroup.Item>
               </ListGroup>
-            </Card.Body>
-            <Card.Footer>
               <p>
                 {" "}
                 <strong>Cooking method: </strong>{" "}
                 {chef.chefs_info.recipes[0].cooking_method}{" "}
               </p>
-              <div className="d-flex justify-content-between ">
+             
+            </Card.Body>
+            <Card.Footer>
+            <div className="d-flex justify-content-between ">
                 <div>
                   <strong>Rating:{chef.chefs_info.recipes[0].rating}</strong>
                 </div>
                 <div>
-                <button className="primary" onClick={handleClicked1} disabled={clicked}>
-                  {clicked ? 'Bookmarked' : 'Add to Favorites'}
+                  <button
+                    className=""
+                    onClick={handleClicked1}
+                    disabled={clicked1}
+                  >
+                    {clicked1 ? "Bookmarked" : "Add to Favorites"}
                   </button>
                 </div>
               </div>
@@ -134,23 +141,28 @@ const handleClicked2 =()=>{
                   {chef.chefs_info.recipes[1].ingredients[4]}
                 </ListGroup.Item>
               </ListGroup>
-            </Card.Body>
-            <Card.Footer>
               <p>
                 {" "}
                 <strong>Cooking method: </strong>{" "}
                 {chef.chefs_info.recipes[1].cooking_method}{" "}
               </p>
+            </Card.Body>
+            <Card.Footer>
               <div className="d-flex justify-content-between ">
                 <div>
                   <strong>Rating:{chef.chefs_info.recipes[1].rating}</strong>
                 </div>
                 <div>
-                <button className="text-primary" onClick={handleClicked2} disabled={clicked}>
-                  {clicked ? 'Bookmarked' : 'Add to Favorites'}
+                  <button
+                    className=""
+                    onClick={handleClicked2}
+                    disabled={clicked2}
+                  >
+                    {clicked2 ? "Bookmarked" : "Add to Favorites"}
                   </button>
                 </div>
               </div>
+            
             </Card.Footer>
           </Card>
           <Card>
@@ -175,26 +187,30 @@ const handleClicked2 =()=>{
                   {chef.chefs_info.recipes[2].ingredients[4]}
                 </ListGroup.Item>
               </ListGroup>
-            </Card.Body>
-            <Card.Footer>
               <p>
                 {" "}
                 <strong>Cooking method: </strong>{" "}
                 {chef.chefs_info.recipes[2].cooking_method}{" "}
               </p>
+            </Card.Body>
+            <Card.Footer>
               <div className="d-flex justify-content-between ">
                 <div>
                   <strong>Rating:{chef.chefs_info.recipes[2].rating}</strong>
                 </div>
                 <div>
-                  <button className="text-primary" onClick={handleClicked} disabled={clicked}>
-                  {clicked ? 'Bookmarked' : 'Add to Favorites'}
+                  <button
+                    className=""
+                    onClick={handleClicked}
+                    disabled={clicked}
+                  >
+                    {clicked ? "Bookmarked" : "Add to Favorites"}
                   </button>
                 </div>
               </div>
+             
             </Card.Footer>
           </Card>
-        
         </CardGroup>
         <ToastContainer></ToastContainer>
       </div>
