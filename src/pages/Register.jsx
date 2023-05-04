@@ -2,11 +2,14 @@ import React, { useContext } from 'react';
 import Header from '../Shared/Header';
 import Footer from './Home/Footer';
 import { Button, Container,Form } from 'react-bootstrap';
-import {  Link } from 'react-router-dom';
+import {  Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProviders';
 
 const Register = () => {
     const{createUser}= useContext(AuthContext)
+    // const location = useLocation();
+    // const from = location.state?.from?.pathname || "/";
+    // const navigate = useNavigate();
     const handleRegister = event =>{
         event.preventDefault()
         const form = event.target;
@@ -19,6 +22,7 @@ const Register = () => {
         .then(result=>{
             const createdUser = result.user
             console.log(createdUser);
+            navigate('/');
         })
         .catch(error=>{
             console.log(error);
@@ -50,9 +54,7 @@ const Register = () => {
           <Form.Control type="text" name='photo' placeholder="Photo Url" required />
           
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Accept Terms & Condition" />
-        </Form.Group>
+   
         <Button variant="primary" type="submit">
           Register
         </Button> <br />

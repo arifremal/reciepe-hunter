@@ -6,6 +6,7 @@ import Chefs from "../pages/Chefs";
 import Blog from "../pages/Blog";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import ProtectedRoute from "./ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -34,7 +35,7 @@ const router = createBrowserRouter([
   },
   {
     path: "chef/:_id",
-    element: <ChefLayout></ChefLayout>,
+    element: <ProtectedRoute><ChefLayout></ChefLayout></ProtectedRoute>,
     loader: ({ params }) =>
     fetch(`http://localhost:5000/chef/${params._id}`),
     children: [

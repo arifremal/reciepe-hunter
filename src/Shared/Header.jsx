@@ -5,7 +5,14 @@ import { AuthContext } from "../Providers/AuthProviders";
 import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
-  const {user}=  useContext(AuthContext)
+  const {user, logOut}=  useContext(AuthContext)
+  const handleLogOut =()=>{
+    logOut()
+    .then ()
+    .catch(error =>{
+      console.log(error);
+    })
+  }
   return (
     <div>
       <Navbar bg="light" expand="lg">
@@ -25,12 +32,12 @@ const Header = () => {
             </Nav>
            <Nav>
            { user && <Nav.Link>
-              <FaUserCircle style={{fontSize:'2rem'}} ></FaUserCircle>
-
+              {/* <FaUserCircle style={{fontSize:'2rem'}} ></FaUserCircle> */}
+            <img style={{ height: '40px' }} className="rounded-circle" src={user.photoURL} alt="" />
             </Nav.Link>}
            </Nav>
              { user ? 
-             <Button variant="outline-primary">Logout</Button>:
+             <Button onClick={handleLogOut} variant="outline-primary">Logout</Button>:
            <Link to='/login' >
              <Button variant="outline-primary">Login</Button>
            </Link>
