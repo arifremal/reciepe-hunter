@@ -4,6 +4,10 @@
   font-family: "Comfortaa", cursive;
 }
 
+.active{
+  @apply danger
+}
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
